@@ -93,7 +93,7 @@ const Show = () => {
   return (
     <div className="pl-16  flex flex-col gap-8">
      
-     <div className="flex text-4xl    justify-center font-bold ">
+     <div className="flex text-4xl pt-5    justify-center font-bold ">
         <p>Leader Board</p>
       </div>
 
@@ -107,8 +107,8 @@ const Show = () => {
         />
       ) :
        (
-         <div className="overflow-auto">
-         <table className=" border border-black sm:text-lg text-sm">
+         <div className="overflow-auto ">
+         <table className=" border border-black sm:text-lg text-sm w-[80%] ">
           <thead className="bg-slate-600 text-white">
             <tr>
               <th

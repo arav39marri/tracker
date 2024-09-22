@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config();
+const databaseUrl = process.env.DATABASE_URL;
 
 const curuser = new mongoose.Schema({
     name: { type: String, required: true },
     handle: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }
 });
-mongoose.connect('mongodb+srv://aravindmarripelli:wDkivUbzKO92e10l@cluster0.yakk4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(`${databaseUrl}`)
 .then(()=>{console.log("mongodb connected")})
 .catch(err=>{console.log("error connecting to", err) });
 
