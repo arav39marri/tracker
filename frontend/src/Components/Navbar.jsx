@@ -22,7 +22,7 @@ const Navbar = () => {
                     <Link to="/Createuser"><li>Add user</li></Link>
                     <Link to="/Allusers"><li>All users</li></Link>
             </ul>
-              {
+               { 
                  icon ? 
                  (<div  className=' md:hidden relative   right-0 bg-slate-800   top-0 p-3    ' >
                     <div className=' flex justify-end '>
