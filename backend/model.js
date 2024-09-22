@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const express = require('express');
+const cors = require('cors');
+const app = express();
 require('dotenv').config();
 const databaseUrl = process.env.DATABASE_URL;
 
