@@ -1,9 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { CodforcesInfo } from "./Fetch";
+
 import  animation from '../animation.json';
 import { Player } from '@lottiefiles/react-lottie-player';
 import axios from "axios";
+
+
+const databaseUrl = "https://tracker-9chm.onrender.com";
 
 const Allusers = () => {
   const [data, setData] = useState([]);
@@ -15,7 +18,7 @@ const Allusers = () => {
       async function fetchFromDb() {
         setLoading(true);
         try {
-          const res = await axios.get('http://localhost:8900/show');
+          const res = await axios.get("https://tracker-9chm.onrender.com/show");
           setInfo(res.data); 
           console.log(res.data);
         } 

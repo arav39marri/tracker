@@ -3,6 +3,8 @@ import { useState,useEffect } from 'react'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
+const databaseUrl = "https://tracker-9chm.onrender.com/create";
+
 const Createuser = () => {
     const [name,setName] = useState("");
         const [handle, setHandle] = useState("");
@@ -11,7 +13,7 @@ const Createuser = () => {
         e.preventDefault();
 
         try{
-            await axios.post('http://localhost:8900/create',
+            await axios.post("https://tracker-9chm.onrender.com/create",
                 {
                     name,
                     handle,

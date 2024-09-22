@@ -3,9 +3,12 @@ import axios from "axios";
 import "./Show.css";
 import { FaSort } from "react-icons/fa";
 import Lottie from "react-lottie";
-import { CodforcesInfo } from "./Fetch";
+
 import animation from "../animation.json";
 import { Player } from "@lottiefiles/react-lottie-player";
+
+const databaseUrl = "";
+
 
 const Show = () => {
   const [table, setTable] = useState(false);
@@ -23,7 +26,7 @@ const Show = () => {
     async function fetchFromDb() {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:8900/show");
+        const res = await axios.get("https://tracker-9chm.onrender.com/show");
         setInfo(res.data);
         console.log(res.data);
       } catch (err) {
