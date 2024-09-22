@@ -107,7 +107,7 @@ const Show = () => {
         />
       ) :
        (
-         <div className="overflow-clip">
+         <div className="overflow-auto">
          <table className=" border border-black sm:text-lg text-sm">
           <thead className="bg-slate-600 text-white">
             <tr>

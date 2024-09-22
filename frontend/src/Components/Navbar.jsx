@@ -11,39 +11,41 @@ const Navbar = () => {
     };
 
     return (
-        <div className='bg-slate-800 text-white h-[10%] w-full'>
-            <div className='p-2 flex items-center'>
-                <SiPivotaltracker className='text-2xl' />
-                <p className='font-bold text-2xl ml-2'>Codeforces Tracker</p>
-
-                <div className='md:flex absolute md:left-[25%] left-[70%]  w-full'>
-                    <div className='hidden md:flex text-xl font-semibold ml-3'>
-                        <ul className='flex gap-6'>
-                            <Link to="/show"><li>LeaderBoard</li></Link>
-                            <Link to="/Createuser"><li>Add user</li></Link>
-                            <Link to="/Allusers"><li>All users</li></Link>
-                        </ul>
-                    </div>
-
-                    <div className="relative md:hidden text-right right-0 w-[30%]  top-0 ">
-                        {icon ? (
-                            <IoMenuSharp className="text-3xl" onClick={handleToggle} />
-                        ) : (
-                            <div className="absolute top-0 left-0 w-full h-fit  bg-slate-800 p-4 z-50">
-                                <IoClose className="text-3xl text-white cursor-pointer" onClick={handleToggle} />
-                                <div className="flex flex-col items-start space-y-6">
-                                    <ul className="flex flex-col space-y-4 text-white text-lg">
-                                        <Link to="/show" onClick={handleToggle}  ><li>LeaderBoard</li></Link>
-                                        <Link to="/Createuser " onClick={handleToggle}   ><li>Add user</li></Link>
-                                        <Link to="/Allusers" onClick={handleToggle}  ><li>All users</li></Link>
-                                    </ul>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+        <div className='bg-slate-800 flex text-white min-h-14 items-center gap-5  w-full '>
+            <div className='p-3 flex items-center justify-start gap-6 w-[20%]  '   >
+            <SiPivotaltracker className='text-2xl' />
+            <p className='font-bold text-xl '> Tracker</p>
+            </div>
+            <div className='p-1 w-[80%] '  >
+            <ul className='md:flex hidden items-center   justify-start gap-10 text-lg font-semibold '>
+                    <Link to="/show"><li>LeaderBoard</li></Link>
+                    <Link to="/Createuser"><li>Add user</li></Link>
+                    <Link to="/Allusers"><li>All users</li></Link>
+            </ul>
+              {
+                 icon ? 
+                 (<div  className=' md:hidden relative   right-0 bg-slate-800   top-0 p-3    ' >
+                    <div className=' flex justify-end '>
+                    <IoMenuSharp className="text-3xl text-right " onClick={handleToggle} />
+                        </div>
+                 </div> ) :
+                 ( <div className='md:hidden  fixed  right-0  w-[40%] bg-slate-800   transition-transform rounded-xl h-screen   top-0 p-3 '   >
+                        <div className=' flex justify-end '>
+                        <IoClose className="text-3xl text-white text-right cursor-pointer" onClick={handleToggle} />
+                        </div>
+                     <ul className="flex flex-col space-y-4 text-white text-lg bg-slate-800 w-full gap-6 p-4 ">
+                       <Link to="/show"  className='text-center' onClick={handleToggle}  ><li>LeaderBoard</li></Link>
+                         <Link to="/Createuser " className='text-center' onClick={handleToggle}   ><li>Add user</li></Link>
+                        <Link to="/Allusers" className='text-center' onClick={handleToggle}  ><li>All users</li></Link>
+                    </ul>
+                 </div> 
+                   
+                
+                )
+              }
             </div>
         </div>
+        
     );
 };
 
