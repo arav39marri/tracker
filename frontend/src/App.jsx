@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import Createuser from './Components/Createuser'
 import Show from './Components/Show'
 import Navbar from './Components/Navbar'
